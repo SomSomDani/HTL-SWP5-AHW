@@ -1,3 +1,4 @@
+import copy
 import random;
 def bubblesort(mlist):
     n = len(mlist)
@@ -6,8 +7,6 @@ def bubblesort(mlist):
             if mlist[j] > mlist[j + 1]:
                 mlist[j], mlist[j + 1] = mlist[j + 1], mlist[j]
     return mlist
-
-
 def insertionsort(mlist):
     for i in range(1, len(mlist)):
         key = mlist[i]
@@ -17,8 +16,6 @@ def insertionsort(mlist):
             j -= 1
         mlist[j + 1] = key
     return mlist
-
-
 def selectionsort(mlist):
     for i in range(len(mlist)):
         min_idx = i
@@ -30,12 +27,15 @@ def selectionsort(mlist):
 
 if __name__ == "__main__":
         nlist = []
+        nlist2 = []
+        nlist3 = []
         for j in range(0, 100):
             n = random.randint(0,100)
             nlist.append(n)
+        nlist2, nlist3 = copy.deepcopy(nlist), copy.deepcopy(nlist)
         bsortlist = bubblesort(nlist)
-        isortlist = insertionsort(nlist)
-        ssortlist = selectionsort(nlist)
+        isortlist = insertionsort(nlist2)
+        ssortlist = selectionsort(nlist3)
         print(bsortlist)
         print(isortlist)
         print(ssortlist)
