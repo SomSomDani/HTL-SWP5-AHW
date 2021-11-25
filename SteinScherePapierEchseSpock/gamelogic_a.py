@@ -1,6 +1,6 @@
 import random
 import UserI
-
+import databaseI
 #import replit as replit
 
 
@@ -20,12 +20,20 @@ def numbertoString(n):
 def logic(n, u):
     type(n)
     type(u)
+    databaseT = r"C:\Users\danis\PycharmProjects\5AHW\SteinScherePapierEchseSpock\StScPaLiSp_Python.db"
+    conn = databaseI.create_database(databaseT)
     compare = n - u + 5
     if compare % 5 == 0:
+        result = "draw"
+        databaseI.insert(databaseT, n, u, result)
         return "draw"
     if (compare % 5 + 1) % 2 == 0:
+        result = "win"
+        databaseI.insert(databaseT, n, u, result)
         return "win"
     if (compare % 5) % 2 == 0:
+        result = "lose"
+        databaseI.insert(databaseT, n, u, result)
         return "lose"
 
 
