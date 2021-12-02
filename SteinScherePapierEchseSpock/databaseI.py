@@ -48,10 +48,13 @@ def selectResult(db_file):
     rowsDraw = cur.fetchall()
     cur.close()
     conn.close()
-    #rows = rowsWins + rowsLose + rowsDraw
-    #for row in rows:
-    #    print(row)
-    print("Wins:", rowsWins,"Lose:",rowsLose,"Draw:",rowsDraw)
+    for a in rowsWins:
+        wins = int(a[0])
+    for a in rowsLose:
+        lose = int(a[0])
+    for a in rowsDraw:
+        draw = int(a[0])
+    print("Wins:",wins,"\nLose:",lose,"\nDraw:",draw)
 
 def selectUser(db_file):
     conn = sqlite3.connect(db_file)
@@ -64,7 +67,11 @@ def selectUser(db_file):
     rowCount = cur.fetchall()
     cur.close()
     conn.close()
-    print("Most used by AI:",rowUser,"How often used by PC:", rowCount)
+    for a in rowUser:
+       user = str(a[0])
+    for a in rowCount:
+       count = int(a[0])
+    print("\nMost used by AI:",user,"\nHow often used by PC:", count)
 
 def selectAI(db_file):
     conn = sqlite3.connect(db_file)
@@ -77,4 +84,8 @@ def selectAI(db_file):
     rowCount = cur.fetchall()
     cur.close()
     conn.close()
-    print("Most used by AI:",rowPc,"How often used by PC:", rowCount)
+    for a in rowPc:
+       pc = str(a[0])
+    for a in rowCount:
+       count = int(a[0])
+    print("\nMost used by AI:",pc,"\nHow often used by PC:", count)
