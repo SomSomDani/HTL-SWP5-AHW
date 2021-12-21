@@ -56,11 +56,11 @@ def game(level):
         elif level == "h":
             pass
         userinput = (int(userinputs))
-        if (user == True):
+        if user == True:
             print("User: " + numbertoString(userinput))
             print("BOT: " + numbertoString(compinput))
             print(logic(userinput,compinput))
             userinputs = input("Continue playing [c] or back to menu [m]")
-            if (userinputs.lower() == "m"):
+            if userinputs.lower() == "m":
                 gameover = True
     UserI.mainmenu()
