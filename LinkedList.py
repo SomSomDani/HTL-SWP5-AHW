@@ -1,4 +1,3 @@
-"""
 class Node:
     def __init__(self, data):
         self.data = data
@@ -156,57 +155,57 @@ class LinkedList(Node):
                 back = back.prev
             front = front.next
 
-    def adding_random(self):
+    def adding_random(self,list):
         import random
         length = int(input("Länge?: "))
         for i in range(length):
             input_Node = random.randint(0, 100)
             list.addingNode(input_Node)
 
-    def output(self):
+    def output(self,list):
         print("Länge : %i" % list.length_list())
         list.output_List()
 
-    def delete(self):
+    def delete(self,list):
         item_id = int(input("Welches Element sollte gelöscht werden?: "))
         list.deleteNode(item_id)
         self.output()
 
-    def search(self):
+    def search(self,list):
         item_value = int(input("Welches Element sollte gesucht werden?: "))
         print(list.find_index(item_value))
 
-    def insert_before_Node(self):
+    def insert_before_Node(self,list):
         item_value = int(input("Welches Element sollte vorher eingefügt werden?: "))
         item_value_before = int(input("Vor welchem Element sollte es eingefügt werden?: "))
-        print(list.insert_before(item_value_before, item_value))
+        list.insert_before(item_value_before, item_value)
         self.output()
 
-    def insert_after_node(self):
+    def insert_after_node(self,list):
         item_value = int(input("Welches Element sollte ausgewählt werden?: "))
         item_value_after = int(input("Welches Element sollte danach eingefügt werden?: "))
-        print(list.insert_after(item_value, item_value_after))
-        self.output()
+        list.insert_after(item_value, item_value_after)
+        self.output(list)
 
-    def delete_after_node(self):
+    def delete_after_node(self,list):
         item_value = int(input("Welcher Knoten sollte danach entfernt werden: "))
-        print(list.delete_after(item_value))
-        self.output()
+        list.delete_after(item_value)
+        self.output(list)
 
-    def delete_before_node(self):
+    def delete_before_node(self,list):
         item_value = int(input("Welcher Knoten sollte davor entfernt werden: "))
-        print(list.delete_before(item_value))
-        self.output()
+        list.delete_before(item_value)
+        self.output(list)
 
-    def insertionSortAscO(self):
+    def insertionSortAscO(self,list):
         list.insertionSortAsc()
-        self.output()
+        self.output(list)
 
-    def insertionSortDescO(self):
+    def insertionSortDescO(self,list):
         list.insertionSortDesc()
-        self.output()
+        self.output(list)
 
-    def menu(self):
+    def menu(self,list):
         repeat = True
         answer = None
         while (repeat):
@@ -214,45 +213,21 @@ class LinkedList(Node):
                            "- Knoten danach entfernen [d] - Knoten davor entfernen [v] - "
                            "Sortieren ASC [o] - Sortieren DESC [u] - Beenden [any] ").lower()
             if answer == "l":
-                self.delete()
+                self.delete(list)
             elif answer == "s":
-                self.search()
+                self.search(list)
             elif answer == "a":
-                self.insert_after_node()
+                self.insert_after_node(list)
             elif answer == "b":
-                self.insert_before_Node()
+                self.insert_before_Node(list)
             elif answer == "d":
-                self.delete_after_node()
+                self.delete_after_node(list)
             elif answer == "v":
-                self.delete_before_node()
+                self.delete_before_node(list)
             elif answer == "o":
-                self.insertionSortAscO()
+                self.insertionSortAscO(list)
             elif answer == "u":
-                self.insertionSortDescO()
+                self.insertionSortDescO(list)
             else:
                 repeat = False
                 print("Verlassen")
-"""
-import LinkedList
-import ArrayList
-
-def create_random_values():
-    import random
-    values = []
-    for i in range(100):
-        values.append(random.randint(0,10000))
-    return values
-
-def main():
-    #llist = LinkedList.LinkedList()
-    alist = ArrayList.ArrayList()
-    val = create_random_values()
-    #llist.adding_random(llist)
-    alist.adding_elem(val)
-    #llist.output(llist)
-    alist.output(alist)
-    #llist.menu(llist)
-    alist.menu(alist)
-
-if __name__ == '__main__':
-    main()
