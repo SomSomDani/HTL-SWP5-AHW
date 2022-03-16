@@ -236,23 +236,30 @@ class LinkedList(Node):
 import LinkedList
 import ArrayList
 
+
 def create_random_values():
     import random
     values = []
     for i in range(100):
-        values.append(random.randint(0,10000))
+        values.append(random.randint(0, 10000))
     return values
 
+
 def main():
-    #llist = LinkedList.LinkedList()
+    llist = LinkedList.LinkedList()
     alist = ArrayList.ArrayList()
     val = create_random_values()
-    #llist.adding_random(llist)
+    llist.adding_random(val, llist)
     alist.adding_elem(val)
-    #llist.output(llist)
+    print("Linked-List: ")
+    llist.output(llist)
+    print("Array-List: ")
     alist.output(alist)
-    #llist.menu(llist)
+    print("Menu Linked-List: ")
+    llist.menu(llist)
+    print("Menu Array-List: ")
     alist.menu(alist)
+
 
 if __name__ == '__main__':
     main()

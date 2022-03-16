@@ -155,11 +155,14 @@ class LinkedList(Node):
                 back = back.prev
             front = front.next
 
-    def adding_random(self,list):
-        import random
-        length = int(input("Länge?: "))
-        for i in range(length):
-            input_Node = random.randint(0, 100)
+    def adding_random(self,value,list):
+        #import random
+        #length = int(input("Länge?: "))
+        #for i in range(length):
+        #    input_Node = random.randint(0, 100)
+        #    list.addingNode(input_Node)
+        for i in range (len(value)):
+            input_Node = value[i]
             list.addingNode(input_Node)
 
     def output(self,list):
@@ -210,7 +213,7 @@ class LinkedList(Node):
         answer = None
         while (repeat):
             answer = input("Löschen [l] - Suche [s] - Einfügen nachher [a] - Einfügen davor [b] "
-                           "- Knoten danach entfernen [d] - Knoten davor entfernen [v] - "
+                           "- Knoten danach entfernen [d] - Knoten davor entfernen [v] \n - "
                            "Sortieren ASC [o] - Sortieren DESC [u] - Beenden [any] ").lower()
             if answer == "l":
                 self.delete(list)
