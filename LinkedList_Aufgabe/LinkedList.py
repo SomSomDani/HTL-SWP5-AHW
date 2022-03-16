@@ -155,60 +155,60 @@ class LinkedList(Node):
                 back = back.prev
             front = front.next
 
-    def adding_random(self,value,list):
+    def adding_random(self,value):
         #import random
         #length = int(input("Länge?: "))
         #for i in range(length):
         #    input_Node = random.randint(0, 100)
         #    list.addingNode(input_Node)
-        for i in range (len(value)):
+        for i in range(len(value)):
             input_Node = value[i]
-            list.addingNode(input_Node)
+            self.addingNode(input_Node)
 
-    def output(self,list):
-        print("Länge : %i" % list.length_list())
-        list.output_List()
+    def output(self):
+        print("Länge : %i" % self.length_list())
+        self.output_List()
 
-    def delete(self,list):
+    def delete(self):
         item_id = int(input("Welches Element sollte gelöscht werden?: "))
-        list.deleteNode(item_id)
+        self.deleteNode(item_id)
         self.output()
 
-    def search(self,list):
+    def search(self):
         item_value = int(input("Welches Element sollte gesucht werden?: "))
-        print(list.find_index(item_value))
+        print(self.find_index(item_value))
 
-    def insert_before_Node(self,list):
+    def insert_before_Node(self):
         item_value = int(input("Welches Element sollte vorher eingefügt werden?: "))
         item_value_before = int(input("Vor welchem Element sollte es eingefügt werden?: "))
-        list.insert_before(item_value_before, item_value)
+        self.insert_before(item_value_before, item_value)
         self.output()
 
-    def insert_after_node(self,list):
+    def insert_after_node(self):
         item_value = int(input("Welches Element sollte ausgewählt werden?: "))
         item_value_after = int(input("Welches Element sollte danach eingefügt werden?: "))
-        list.insert_after(item_value, item_value_after)
-        self.output(list)
+        self.insert_after(item_value, item_value_after)
+        self.output()
 
-    def delete_after_node(self,list):
+    def delete_after_node(self):
         item_value = int(input("Welcher Knoten sollte danach entfernt werden: "))
-        list.delete_after(item_value)
-        self.output(list)
+        self.delete_after(item_value)
+        self.output()
 
-    def delete_before_node(self,list):
+    def delete_before_node(self):
         item_value = int(input("Welcher Knoten sollte davor entfernt werden: "))
-        list.delete_before(item_value)
-        self.output(list)
+        self.delete_before(item_value)
+        self.output()
 
-    def insertionSortAscO(self,list):
-        list.insertionSortAsc()
-        self.output(list)
+    def insertionSortAscO(self):
+        self.insertionSortAsc()
+        self.output()
 
-    def insertionSortDescO(self,list):
-        list.insertionSortDesc()
-        self.output(list)
+    def insertionSortDescO(self):
+        self.insertionSortDesc()
+        self.output()
 
-    def menu(self,list):
+    def menu(self):
         repeat = True
         answer = None
         while (repeat):
@@ -216,21 +216,21 @@ class LinkedList(Node):
                            "- Knoten danach entfernen [d] - Knoten davor entfernen [v] \n - "
                            "Sortieren ASC [o] - Sortieren DESC [u] - Beenden [any] ").lower()
             if answer == "l":
-                self.delete(list)
+                self.delete()
             elif answer == "s":
-                self.search(list)
+                self.search()
             elif answer == "a":
-                self.insert_after_node(list)
+                self.insert_after_node()
             elif answer == "b":
-                self.insert_before_Node(list)
+                self.insert_before_Node()
             elif answer == "d":
-                self.delete_after_node(list)
+                self.delete_after_node()
             elif answer == "v":
-                self.delete_before_node(list)
+                self.delete_before_node()
             elif answer == "o":
-                self.insertionSortAscO(list)
+                self.insertionSortAscO()
             elif answer == "u":
-                self.insertionSortDescO(list)
+                self.insertionSortDescO()
             else:
                 repeat = False
                 print("Verlassen")

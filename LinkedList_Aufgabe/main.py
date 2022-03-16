@@ -249,16 +249,16 @@ def main():
     llist = LinkedList.LinkedList()
     alist = ArrayList.ArrayList()
     val = create_random_values()
-    llist.adding_random(val, llist)
+    llist.adding_random(val)
     alist.adding_elem(val)
     print("Linked-List: ")
-    llist.output(llist)
+    llist.output()
     print("Array-List: ")
-    alist.output(alist)
+    alist.output()
     print("Menu Linked-List: ")
-    llist.menu(llist)
+    llist.menu()
     print("Menu Array-List: ")
-    alist.menu(alist)
+    alist.menu()
 
 
 if __name__ == '__main__':

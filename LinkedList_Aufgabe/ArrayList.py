@@ -23,8 +23,8 @@ class ArrayList():
             if list [i] == item:
                 print("Element existiert in der Liste: " + str(i))
 
-    def output(self,alist):
-        print("Länge : %i" % alist.length_list())
+    def output(self):
+        print("Länge : %i" % self.length_list())
         arraylist = self.arr
         output = []
         for i in range(len(arraylist)):
@@ -88,46 +88,46 @@ class ArrayList():
             array[j + 1] = key
         return array
 
-    def insertionSortAscO(self,list):
-        list.sortAsc()
-        self.output(list)
+    def insertionSortAscO(self):
+        self.sortAsc()
+        self.output()
 
-    def insertionSortDescO(self,list):
-        list.sortDesc()
-        self.output(list)
+    def insertionSortDescO(self):
+        self.sortDesc()
+        self.output()
 
-    def delete_elem(self,list):
+    def delete_elem(self):
         item_id = int(input("Welches Element sollte gelöscht werden?: "))
-        list.delete(item_id)
-        self.output(list)
+        self.delete(item_id)
+        self.output()
 
-    def search_elem(self,list):
+    def search_elem(self):
         item_value = int(input("Welches Element sollte gesucht werden?: "))
-        list.search(item_value)
+        self.search(item_value)
 
-    def insert_before_Node(self,list):
+    def insert_before_Node(self):
         item_value = int(input("Vor welchem Element sollte es eingefügt werden?: "))
         item_value_before = int(input("Welches Element sollte vorher eingefügt werden?: "))
-        list.insertBefore(item_value_before, item_value)
-        self.output(list)
+        self.insertBefore(item_value_before, item_value)
+        self.output()
 
-    def insert_after_node(self,list):
+    def insert_after_node(self):
         item_value = int(input("Welches Element sollte ausgewählt werden?: "))
         item_value_after = int(input("Welches Element sollte danach eingefügt werden?: "))
-        list.insertAfter(item_value, item_value_after)
-        self.output(list)
+        self.insertAfter(item_value, item_value_after)
+        self.output()
 
-    def delete_after_node(self,list):
+    def delete_after_node(self):
         item_value = int(input("Welches Element sollte danach entfernt werden: "))
-        list.deleteAfter(item_value)
-        self.output(list)
+        self.deleteAfter(item_value)
+        self.output()
 
-    def delete_before_node(self,list):
+    def delete_before_node(self):
         item_value = int(input("Welches Element sollte davor entfernt werden: "))
-        list.deleteBefore(item_value)
-        self.output(list)
+        self.deleteBefore(item_value)
+        self.output()
 
-    def menu(self, list):
+    def menu(self):
         repeat = True
         answer = None
         while (repeat):
@@ -135,21 +135,21 @@ class ArrayList():
                            "- Element danach entfernen [d] \n - Element davor entfernen [v] - "
                            "Sortieren ASC [o] - Sortieren DESC [u] - Beenden [any] ").lower()
             if answer == "l":
-                self.delete_elem(list)
+                self.delete_elem()
             elif answer == "s":
-                self.search_elem(list)
+                self.search_elem()
             elif answer == "a":
-                self.insert_after_node(list)
+                self.insert_after_node()
             elif answer == "b":
-                self.insert_before_Node(list)
+                self.insert_before_Node()
             elif answer == "d":
-                self.delete_after_node(list)
+                self.delete_after_node()
             elif answer == "v":
-                self.delete_before_node(list)
+                self.delete_before_node()
             elif answer == "o":
-                self.insertionSortAscO(list)
+                self.insertionSortAscO()
             elif answer == "u":
-                self.insertionSortDescO(list)
+                self.insertionSortDescO()
             else:
                 repeat = False
                 print("Verlassen")
