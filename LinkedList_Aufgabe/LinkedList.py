@@ -65,7 +65,6 @@ class LinkedList(Node):
             return
 
         prev.next = temp.next
-
         temp = None
 
     def insert_after(self, item_id, item):
@@ -155,10 +154,10 @@ class LinkedList(Node):
                 back = back.prev
             front = front.next
 
-    def adding_random(self,value):
-        #import random
-        #length = int(input("Länge?: "))
-        #for i in range(length):
+    def adding_random(self, value):
+        # import random
+        # length = int(input("Länge?: "))
+        # for i in range(length):
         #    input_Node = random.randint(0, 100)
         #    list.addingNode(input_Node)
         for i in range(len(value)):
