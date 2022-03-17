@@ -3,10 +3,10 @@
 |  add_elements |       O*(n)	   |     O*(n)   |
 |  search/find  |       O*(1)	   |     O*(1)   |
 |     delete    |       O*(1)	   |     O*(1)   |
-|  insert_after |       O*(1)	   |     O*(1)   |
+|  insert_after |       O*(n)	   |     O*(n)   |
 | insert_before |       O*(n)	   |     O*(n)   |
-| delete_before |       O*(1)	   |     O*(1)   |
-|  delete_after |       O*(1)	   |     O*(1)   |
+| delete_before |       O*(n)	   |     O*(n)   |
+|  delete_after |       O*(n)	   |     O*(n)   |
 |  sort_asc     |       O*(n²)	   |     O*(n²)  |
 |  sort_desc    |       O*(n²)	   |     O*(n²)  |
 |   output      |       O*(n)	   |     O*(n)   |
