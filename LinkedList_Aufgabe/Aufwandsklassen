@@ -1,10 +1,10 @@
 |   Functions   | DoubleLinkedList | ArrayList   |
 | ------------- | ---------------- | ----------- |
-|  add_elements |       O*(1)	   |     O*(n)   |
+|  add_elements |       O*(n)	   |     O*(n)   |
 |  search/find  |       O*(1)	   |     O*(1)   |
 |     delete    |       O*(1)	   |     O*(1)   |
 |  insert_after |       O*(1)	   |     O*(1)   |
-| insert_before |       O*(1)	   |     O*(1)   |
+| insert_before |       O*(n)	   |     O*(n)   |
 | delete_before |       O*(1)	   |     O*(1)   |
 |  delete_after |       O*(1)	   |     O*(1)   |
 |  sort_asc     |       O*(n²)	   |     O*(n²)  |
