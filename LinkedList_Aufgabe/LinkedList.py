@@ -12,7 +12,7 @@ class LinkedList(Node):
 
     def addingNode(self, item):
         NewNode = Node(item)
-        if self.head == None:
+        if self.head is None:
             self.head = NewNode
             self.tail = NewNode
             return
@@ -61,7 +61,7 @@ class LinkedList(Node):
                 break
             prev = temp
             temp = temp.next
-        if temp == None:
+        if temp is None:
             return
 
         prev.next = temp.next

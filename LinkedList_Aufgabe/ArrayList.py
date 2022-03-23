@@ -1,9 +1,5 @@
-from array import array
-
-
 class ArrayList():
     def __init__(self):
-        # self.value = None
         self.arr = []
 
     def adding_elem(self, val):
@@ -20,7 +16,7 @@ class ArrayList():
     def search(self, item):
         list = self.arr
         for i in range(len(list)):
-            if list [i] == item:
+            if list[i] == item:
                 print("Element existiert in der Liste: " + str(i))
 
     def output(self):
@@ -28,7 +24,7 @@ class ArrayList():
         arraylist = self.arr
         output = []
         for i in range(len(arraylist)):
-                output.append(arraylist[i])
+            output.append(arraylist[i])
         print(output)
 
     def length_list(self):
@@ -38,11 +34,11 @@ class ArrayList():
             count = count + 1
         return count
 
-    def insertBefore(self, item , item_id):
+    def insertBefore(self, item, item_id):
         arraylist = self.arr
         for i in range(len(arraylist)):
             if i == item_id:
-                arraylist.insert(item_id - 1,item)
+                arraylist.insert(item_id - 1, item)
         return arraylist
 
     def insertAfter(self, item_id, item):
@@ -56,7 +52,7 @@ class ArrayList():
         arraylist = self.arr
         for i in range(len(arraylist)):
             if i == number:
-                arraylist.pop(number-1)
+                arraylist.pop(number - 1)
         return arraylist
 
     def deleteAfter(self, number):
